@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /cevaja
+  port: 8081
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+  datasource:
+    username: cailangrott
+    password: Caica@122014
+    url: jdbc:mysql://localhost:3306/cevaja
+    driverClassName: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
