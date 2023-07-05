@@ -1,5 +1,7 @@
 package com.fundatec.cevaja.cerveja.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fundatec.cevaja.pedido.model.Pedido;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,4 +26,9 @@ public class Cerveja {
 
     @Column(name = "valor",nullable = false)
     private BigDecimal valor;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_pedido", referencedColumnName = "id_pedido")
+    private Pedido pedido;
 }
