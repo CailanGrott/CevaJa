@@ -1,4 +1,4 @@
-package com.fundatec.cevaja.config;
+package com.fundatec.cevaja.usuario.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

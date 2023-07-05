@@ -1,4 +1,4 @@
-package com.fundatec.cevaja.model;
+package com.fundatec.cevaja.usuario.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

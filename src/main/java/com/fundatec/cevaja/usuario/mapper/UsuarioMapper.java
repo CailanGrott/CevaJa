@@ -1,8 +1,8 @@
-package com.fundatec.cevaja.mapper;
+package com.fundatec.cevaja.usuario.mapper;
 
-import com.fundatec.cevaja.model.Usuario;
-import com.fundatec.cevaja.model.dto.AdicionaNovoUsuarioInput;
-import com.fundatec.cevaja.model.dto.AdicionaNovoUsuarioOutput;
+import com.fundatec.cevaja.usuario.model.Usuario;
+import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioInput;
+import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioOutput;
 
 public class UsuarioMapper {
     public static AdicionaNovoUsuarioInput mapUsuarioToInput(Usuario usuario) {

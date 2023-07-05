@@ -1,6 +1,6 @@
-package com.fundatec.cevaja.repository;
+package com.fundatec.cevaja.usuario.repository;
 
-import com.fundatec.cevaja.model.Usuario;
+import com.fundatec.cevaja.usuario.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

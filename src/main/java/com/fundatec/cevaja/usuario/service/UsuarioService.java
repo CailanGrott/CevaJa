@@ -1,14 +1,14 @@
-package com.fundatec.cevaja.service;
+package com.fundatec.cevaja.usuario.service;
 
-import com.fundatec.cevaja.mapper.UsuarioMapper;
-import com.fundatec.cevaja.model.Usuario;
-import com.fundatec.cevaja.model.dto.AdicionaNovoUsuarioInput;
-import com.fundatec.cevaja.model.dto.AdicionaNovoUsuarioOutput;
-import com.fundatec.cevaja.model.dto.EditaUsuarioOutput;
-import com.fundatec.cevaja.repository.UsuarioRepository;
+import com.fundatec.cevaja.usuario.mapper.UsuarioMapper;
+import com.fundatec.cevaja.usuario.model.Usuario;
+import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioInput;
+import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioOutput;
+import com.fundatec.cevaja.usuario.model.dto.EditaUsuarioOutput;
+import com.fundatec.cevaja.usuario.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
-import static com.fundatec.cevaja.mapper.UsuarioMapper.*;
+import static com.fundatec.cevaja.usuario.mapper.UsuarioMapper.*;
 
 @Service
 public class UsuarioService {

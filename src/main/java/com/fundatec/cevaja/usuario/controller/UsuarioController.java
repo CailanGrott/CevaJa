@@ -1,9 +1,9 @@
-package com.fundatec.cevaja.controller;
+package com.fundatec.cevaja.usuario.controller;
 
-import com.fundatec.cevaja.model.dto.AdicionaNovoUsuarioInput;
-import com.fundatec.cevaja.model.dto.AdicionaNovoUsuarioOutput;
-import com.fundatec.cevaja.model.dto.EditaUsuarioOutput;
-import com.fundatec.cevaja.service.UsuarioService;
+import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioInput;
+import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioOutput;
+import com.fundatec.cevaja.usuario.model.dto.EditaUsuarioOutput;
+import com.fundatec.cevaja.usuario.service.UsuarioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

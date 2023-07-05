@@ -1,4 +1,4 @@
-package com.fundatec.cevaja.model.dto;
+package com.fundatec.cevaja.usuario.model.dto;
 
 import java.time.LocalDate;
 
