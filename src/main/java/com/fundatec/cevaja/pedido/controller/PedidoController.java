@@ -17,8 +17,8 @@ public class PedidoController {
         this.pedidoService = pedidoService;
     }
 
-    @PostMapping
-    public ResponseEntity<Pedido> criarPedido(Pedido pedido) {
-        return new ResponseEntity<>(pedidoService.criarPedido(pedido), HttpStatus.OK);
-    }
+//    @PostMapping
+//    public ResponseEntity<Pedido> criarPedido(Pedido pedido) {
+//        return new ResponseEntity<>(pedidoService.criarPedido(pedido), HttpStatus.OK);
+//    }
 }
