@@ -1,5 +1,6 @@
 package com.fundatec.cevaja.usuario.service;
 
+import com.fundatec.cevaja.pedido.model.dto.AdicionaUsuarioToPedido;
 import com.fundatec.cevaja.usuario.mapper.UsuarioMapper;
 import com.fundatec.cevaja.usuario.model.Usuario;
 import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioInput;
@@ -7,6 +8,9 @@ import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioOutput;
 import com.fundatec.cevaja.usuario.model.dto.EditaUsuarioOutput;
 import com.fundatec.cevaja.usuario.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 import static com.fundatec.cevaja.usuario.mapper.UsuarioMapper.*;
 

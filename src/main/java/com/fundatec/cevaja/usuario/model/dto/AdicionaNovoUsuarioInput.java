@@ -10,6 +10,6 @@ public record AdicionaNovoUsuarioInput(
         String sobrenome,
         LocalDate dataNascimento,
         String cpf,
-        String login,
+        String username,
         String senha) {
 }

@@ -12,7 +12,7 @@ public class UsuarioMapper {
                 .sobrenome(usuario.getSobrenome())
                 .dataNascimento(usuario.getDataNascimento())
                 .cpf(usuario.getCpf())
-                .login(usuario.getLogin())
+                .username(usuario.getUsername())
                 .senha(usuario.getSenha())
                 .build();
     }
@@ -24,7 +24,7 @@ public class UsuarioMapper {
                 .sobrenome(adicionaNovoUsuarioInput.sobrenome())
                 .dataNascimento(adicionaNovoUsuarioInput.dataNascimento())
                 .cpf(adicionaNovoUsuarioInput.cpf())
-                .login(adicionaNovoUsuarioInput.login())
+                .username(adicionaNovoUsuarioInput.username())
                 .senha(adicionaNovoUsuarioInput.senha())
                 .build();
     }
@@ -35,7 +35,7 @@ public class UsuarioMapper {
                 .sobrenome(adicionaNovoUsuarioOutput.sobrenome())
                 .dataNascimento(adicionaNovoUsuarioOutput.dataNascimento())
                 .cpf(adicionaNovoUsuarioOutput.cpf())
-                .login(adicionaNovoUsuarioOutput.login())
+                .username(adicionaNovoUsuarioOutput.username())
                 .senha(adicionaNovoUsuarioOutput.senha())
                 .build();
     }

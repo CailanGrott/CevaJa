@@ -21,4 +21,11 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
             """, nativeQuery = true)
     void editaUsuarioById(@Nullable @Param("nome") String nome, @Nullable @Param("sobrenome") String sobrenome,
                           @Param("idUsuario") Integer idUsuario);
+
+    @Query(value = """
+            SELECT *
+            FROM usuario
+            WHERE username = :username
+            """, nativeQuery = true)
+    Usuario findUsuarioByUsername(@Param("username") String username);
 }

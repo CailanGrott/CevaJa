@@ -33,12 +33,16 @@ public class Usuario {
     @Column(name = "data_nascimento", nullable = false)
     private LocalDate dataNascimento;
 
-    @Column(name = "login", nullable = false)
-    private String login;
+    @Column(name = "username", nullable = false)
+    private String username;
 
     @Column(name = "senha", nullable = false)
     private String senha;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
     private List<Pedido> pedidos;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_login")
+    private Login login;
 }
