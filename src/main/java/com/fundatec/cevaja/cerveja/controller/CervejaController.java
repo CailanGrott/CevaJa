@@ -4,6 +4,7 @@ import com.fundatec.cevaja.cerveja.model.dto.AdicionaNovoTipoCervejaInput;
 import com.fundatec.cevaja.cerveja.model.dto.AdicionaNovoTipoCervejaOutput;
 import com.fundatec.cevaja.cerveja.model.dto.EditaTipoCervejaOutput;
 import com.fundatec.cevaja.cerveja.service.CervejaService;
+import com.fundatec.cevaja.exception.RegraDeNegocioException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class CervejaController {
     }
 
     @PostMapping
-    public ResponseEntity<AdicionaNovoTipoCervejaInput> adicionaNovoTipoCerveja(@RequestBody AdicionaNovoTipoCervejaOutput adicionaNovoTipoCervejaOutput) {
+    public ResponseEntity<AdicionaNovoTipoCervejaInput> adicionaNovoTipoCerveja(@RequestBody AdicionaNovoTipoCervejaOutput adicionaNovoTipoCervejaOutput) throws RegraDeNegocioException {
         AdicionaNovoTipoCervejaInput adicionaNovoTipoCervejaInput = cervejaService.adicionaNovoTipoCerveja(adicionaNovoTipoCervejaOutput);
         return new ResponseEntity<>(adicionaNovoTipoCervejaInput, HttpStatus.CREATED);
     }
@@ -26,19 +27,19 @@ public class CervejaController {
     @GetMapping
     public ResponseEntity<Iterable<AdicionaNovoTipoCervejaInput>> buscaTodosTiposCerveja() {
         Iterable<AdicionaNovoTipoCervejaInput> adicionaNovoTipoCervejaInput = cervejaService.buscaTodosTiposCerveja();
-        return new ResponseEntity<>(adicionaNovoTipoCervejaInput, HttpStatus.CREATED);
+        return new ResponseEntity<>(adicionaNovoTipoCervejaInput, HttpStatus.OK);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<Void> editaTipoCerveja(@PathVariable("id") Integer id,
                                                  @RequestBody EditaTipoCervejaOutput model) {
         cervejaService.editaTipoCervejaPorId(id, model);
-        return ResponseEntity.noContent().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<Void> deletaTipoCerveja(@PathVariable("id") Integer id) {
-        cervejaService.deletaTipoCervejaPorId(id);
-        return ResponseEntity.noContent().build();
+    @DeleteMapping("{tipoCerveja}")
+    public ResponseEntity<Void> deletaTipoCerveja(@PathVariable("tipoCerveja") String tipoCerveja) {
+        cervejaService.deletaTipoCervejaPorId(tipoCerveja);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 }

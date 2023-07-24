@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface CervejaRepository extends JpaRepository<Cerveja, Integer> {
@@ -23,4 +26,8 @@ public interface CervejaRepository extends JpaRepository<Cerveja, Integer> {
             """, nativeQuery = true)
     void editaCervejaPorId(@Nullable @Param("tipoCerveja") String tipoCerveja, @Nullable @Param("valor") BigDecimal valor,
                            @Param("idCerveja") Integer idCerveja);
+
+    List<Cerveja> findByTipoCervejaIn(Collection<String> tipoCervejas);
+
+    Cerveja findByTipoCerveja(String tipoCerveja);
 }

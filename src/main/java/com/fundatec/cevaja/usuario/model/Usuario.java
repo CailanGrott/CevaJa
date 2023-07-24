@@ -8,7 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
 @Builder
@@ -39,10 +40,6 @@ public class Usuario {
     @Column(name = "senha", nullable = false)
     private String senha;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
-    private List<Pedido> pedidos;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_login")
-    private Login login;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "usuario", cascade = CascadeType.ALL)
+    private Set<Pedido> pedidos = new LinkedHashSet<>();
 }

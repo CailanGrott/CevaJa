@@ -27,4 +27,12 @@ public class CervejaMapper {
                 .valor(output.valor())
                 .build();
     }
+
+    public static Cerveja mapToCerveja(AdicionaNovoTipoCervejaInput cerveja) {
+        return Cerveja.builder()
+                .id(cerveja.id())
+                .tipoCerveja(cerveja.tipoCerveja())
+                .valor(cerveja.valor())
+                .build();
+    }
 }
