@@ -20,3 +20,4 @@ spring:
   data:
     redis:
       host: localhost
+weather-external-api: https://api.weatherapi.com/v1/current.json?key=7b8fa6a32fab4e5aba7230804231605&q=Porto_Alegre&aqi=no

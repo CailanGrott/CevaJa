@@ -9,6 +9,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     @Transactional
@@ -21,4 +23,9 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
             """, nativeQuery = true)
     void editaUsuarioById(@Nullable @Param("nome") String nome, @Nullable @Param("sobrenome") String sobrenome,
                           @Param("idUsuario") Integer idUsuario);
+
+    @Query("select u from usuario u where u.username = ?1")
+    Optional<Usuario> buscaUsuarioPorUsername(String username);
+
+
 }

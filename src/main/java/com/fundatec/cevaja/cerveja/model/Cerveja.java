@@ -1,18 +1,20 @@
 package com.fundatec.cevaja.cerveja.model;
 
+import com.fundatec.cevaja.pedido.model.ItemPedido;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
+@Setter
+@Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "cerveja")
+@NoArgsConstructor
+@Table(name = "cerveja", schema = "cevaja")
 public class Cerveja {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +24,9 @@ public class Cerveja {
     @Column(name = "tipo_cerveja", nullable = false)
     private String tipoCerveja;
 
-    @Column(name = "valor",nullable = false)
+    @Column(name = "valor", nullable = false)
     private BigDecimal valor;
+
+    @OneToMany(mappedBy = "cerveja", cascade = CascadeType.ALL)
+    private Set<ItemPedido> itensPedido = new LinkedHashSet<>();
 }

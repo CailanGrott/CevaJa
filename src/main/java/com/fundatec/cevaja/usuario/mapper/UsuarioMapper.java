@@ -3,6 +3,7 @@ package com.fundatec.cevaja.usuario.mapper;
 import com.fundatec.cevaja.usuario.model.Usuario;
 import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioInput;
 import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioOutput;
+import com.fundatec.cevaja.usuario.model.dto.BuscaTodosUsuarios;
 
 public class UsuarioMapper {
     public static AdicionaNovoUsuarioInput mapUsuarioToInput(Usuario usuario) {
@@ -12,7 +13,7 @@ public class UsuarioMapper {
                 .sobrenome(usuario.getSobrenome())
                 .dataNascimento(usuario.getDataNascimento())
                 .cpf(usuario.getCpf())
-                .login(usuario.getLogin())
+                .username(usuario.getUsername())
                 .senha(usuario.getSenha())
                 .build();
     }
@@ -24,7 +25,7 @@ public class UsuarioMapper {
                 .sobrenome(adicionaNovoUsuarioInput.sobrenome())
                 .dataNascimento(adicionaNovoUsuarioInput.dataNascimento())
                 .cpf(adicionaNovoUsuarioInput.cpf())
-                .login(adicionaNovoUsuarioInput.login())
+                .username(adicionaNovoUsuarioInput.username())
                 .senha(adicionaNovoUsuarioInput.senha())
                 .build();
     }
@@ -35,8 +36,19 @@ public class UsuarioMapper {
                 .sobrenome(adicionaNovoUsuarioOutput.sobrenome())
                 .dataNascimento(adicionaNovoUsuarioOutput.dataNascimento())
                 .cpf(adicionaNovoUsuarioOutput.cpf())
-                .login(adicionaNovoUsuarioOutput.login())
+                .username(adicionaNovoUsuarioOutput.username())
                 .senha(adicionaNovoUsuarioOutput.senha())
+                .build();
+    }
+
+    public static BuscaTodosUsuarios mapUsuarioToBuscaTodos(Usuario usuario) {
+        return BuscaTodosUsuarios.builder()
+                .id(usuario.getId())
+                .nome(usuario.getNome())
+                .sobrenome(usuario.getSobrenome())
+                .dataNascimento(usuario.getDataNascimento())
+                .cpf(usuario.getCpf())
+                .username(usuario.getUsername())
                 .build();
     }
 }
