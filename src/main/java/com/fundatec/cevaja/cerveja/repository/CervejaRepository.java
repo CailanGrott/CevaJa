@@ -29,8 +29,4 @@ public interface CervejaRepository extends JpaRepository<Cerveja, Integer> {
             """, nativeQuery = true)
     void editaCervejaPorId(@Nullable @Param("tipoCerveja") String tipoCerveja, @Nullable @Param("valor") BigDecimal valor,
                            @Param("idCerveja") Integer idCerveja);
-
-    List<Cerveja> findByTipoCervejaIn(Collection<String> tipoCervejas);
-
-    Cerveja findByTipoCerveja(String tipoCerveja);
 }

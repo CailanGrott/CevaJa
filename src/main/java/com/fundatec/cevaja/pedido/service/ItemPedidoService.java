@@ -13,7 +13,10 @@ public class ItemPedidoService {
 
     private final ItemPedidoRepository itemPedidoRepository;
 
-    //TODO TESTA DE NOVO E TENTA EXCLUIR UM PEDIDO!! TEM QUE REINICIAR O APP
+    /**
+     * Associa pedidos aos produtos.
+     *
+     */
 
     public void associarPedidosAoProduto(Cerveja cerveja,
                                          Integer quantidadeCerveja,

@@ -18,9 +18,14 @@ public class WeatherController {
 
     private final WeatherService weatherService;
 
-    @GetMapping
-    public ResponseEntity<WeatherResponse> tempPoa(){
-        return ResponseEntity.ok(this.weatherService.buscarTemp());
-    }
+    /**
+     * Endpoint para obter a temperatura em Porto Alegre.
+     *
+     * @return ResponseEntity com status 200 (OK) e o objeto WeatherResponse contendo as informações climáticas atuais em Porto Alegre.
+     */
 
+    @GetMapping
+    public ResponseEntity<WeatherResponse> tempPoa() {
+        return ResponseEntity.ok(this.weatherService.buscarTemperatura());
+    }
 }

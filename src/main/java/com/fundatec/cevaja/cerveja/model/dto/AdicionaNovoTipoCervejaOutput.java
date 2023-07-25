@@ -11,6 +11,6 @@ public record AdicionaNovoTipoCervejaOutput(
         @Schema(description = "Nome do tipo da cerveja", example = "IPA")
         String tipoCerveja,
         @NotBlank(message = "Preencha o campo valor")
-        @Schema(description = "valor do tipo da cerveja", example = "5.99")
+        @Schema(description = "valor do tipo da cerveja", example = "5")
         BigDecimal valor) implements Serializable {
 }

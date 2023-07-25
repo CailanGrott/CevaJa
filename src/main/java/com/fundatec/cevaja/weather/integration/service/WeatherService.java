@@ -18,7 +18,7 @@ public class WeatherService {
         this.restTemplate = restTemplateBuilder.build();
     }
 
-    public WeatherResponse buscarTemp(){
+    public WeatherResponse buscarTemperatura(){
         String urlCompleta = this.uri;
         return this.restTemplate.getForObject(urlCompleta , WeatherResponse.class);
     }
