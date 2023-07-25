@@ -3,6 +3,7 @@ package com.fundatec.cevaja.cerveja.mapper;
 import com.fundatec.cevaja.cerveja.model.Cerveja;
 import com.fundatec.cevaja.cerveja.model.dto.AdicionaNovoTipoCervejaInput;
 import com.fundatec.cevaja.cerveja.model.dto.AdicionaNovoTipoCervejaOutput;
+import com.fundatec.cevaja.cerveja.model.dto.BuscaTodosTiposCerveja;
 
 public class CervejaMapper {
     public static AdicionaNovoTipoCervejaInput mapCervejaToInput(Cerveja cerveja) {
@@ -33,6 +34,14 @@ public class CervejaMapper {
                 .id(cerveja.id())
                 .tipoCerveja(cerveja.tipoCerveja())
                 .valor(cerveja.valor())
+                .build();
+    }
+
+    public static BuscaTodosTiposCerveja mapCervejaToBuscaTodos(Cerveja cerveja) {
+        return BuscaTodosTiposCerveja.builder()
+                .id(cerveja.getId())
+                .tipoCerveja(cerveja.getTipoCerveja())
+                .valor(cerveja.getValor())
                 .build();
     }
 }

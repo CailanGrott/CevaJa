@@ -6,10 +6,11 @@ import com.fundatec.cevaja.usuario.model.dto.AdicionaNovoUsuarioOutput;
 import com.fundatec.cevaja.usuario.model.dto.BuscaTodosUsuarios;
 import com.fundatec.cevaja.usuario.model.dto.EditaUsuarioOutput;
 import com.fundatec.cevaja.usuario.service.UsuarioService;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/api/v1/usuario")
@@ -27,21 +28,21 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<BuscaTodosUsuarios>> buscaTodosUsuarios() {
-        Iterable<BuscaTodosUsuarios> adicionaNovoUsuarioInput = usuarioService.buscaTodosUsuarios();
+    public ResponseEntity<Collection<BuscaTodosUsuarios>> buscaTodosUsuarios() throws RegraDeNegocioException {
+        Collection<BuscaTodosUsuarios> adicionaNovoUsuarioInput = usuarioService.buscaTodosUsuarios();
         return new ResponseEntity<>(adicionaNovoUsuarioInput, HttpStatus.OK);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<Void> editaUsuario(@PathVariable("id") Integer id,
-                                             @RequestBody EditaUsuarioOutput model) {
+                                             @RequestBody EditaUsuarioOutput model) throws RegraDeNegocioException {
         usuarioService.editaUsuarioPorId(id, model);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteUsuario(@PathVariable("id") Integer id) {
-        usuarioService.deletaUsuarioPorId(id);
+    @DeleteMapping("{username}")
+    public ResponseEntity<Void> deleteUsuario(@PathVariable("username") String username) throws RegraDeNegocioException {
+        usuarioService.deletaUsuarioPorUsername(username);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
